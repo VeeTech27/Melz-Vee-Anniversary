@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Melz+Vee❤️</title>
+<style>
+body {
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Title */
+h1 {
+  font-size: 45px;
+  margin-top: 30px;
+}
+
+/* Countdown */
+#countdown {
+  font-size: 25px;
+  margin: 20px;
+  color: #ff9aa2;
+}
+
+/* Sections */
+.section {
+  margin: 40px auto;
+  width: 80%;
+}
+
+/* Gallery */
+.gallery img {
+  width: 200px;
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 0 0 10px pink;
+}
+
+/* Button */
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: pink;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  color: red;
+  font-size: 18px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh); opacity: 1;}
+  100% {transform: translateY(-10vh); opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Anniversary Masengwa🧸❤️</h1>
+<div id="countdown"></div>
+
+<div class="section">
+<p>
+This is my coded luxury love website just for you.  
+We’ve been through a lot, but I’m proud of us and how we chose each other.  
+With God at the center, I choose you every day 🤍
+</p>
+</div>
+
+<!-- PHOTO GALLERY -->
+<div class="section gallery">
+<h2>Our Memories 📸</h2>
+<img src="MV2.jpeg">
+<img src="MV3.jpeg">
+<img src="MV1.jpeg">
+</div>
+
+<!-- SECRET LETTER BUTTON -->
+<div class="section">
+<button onclick="document.getElementById('letter').style.display='block'">
+Click for My Secret Letter 💌
+</button>
+</div>
+
+<!-- SECRET LETTER -->
+<div id="letter" class="section" style="display:none;">
+<p>
+My love, you are my safe place, my answered prayer, and my favorite person.  
+I pray our love grows deeper, kinder, and stronger every day.  
+I love you more than words can explain 🤍
+</p>
+</div>
+
+<!-- FOREVER BUTTON -->
+<div class="section">
+<button onclick="alert('I choose you forever, Malusi ❤️')">
+Will you be my forever?
+</button>
+</div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgm" loop>
+  <source src="music.mpeg" type="audio/mpeg">
+</audio>
+<script>
+document.body.addEventListener("click", () => {
+  document.getElementById("bgm").play();
+});
+</script>
+
+<script>
+// Floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}, 300);
+
+// Countdown to 27 Feb
+const anniversary = new Date("2026-02-27").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = anniversary - now;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("countdown").innerHTML = "Our Anniversary in: " + days + " days 💕";
+}, 1000);
+</script>
+
+</body>
+</html>
